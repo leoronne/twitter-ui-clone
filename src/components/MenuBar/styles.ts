@@ -20,7 +20,6 @@ import avatar from '~/assets/img/avatar.jpg';
 export const Container = styled.div`
   display: none;
 
-
   @media (min-width: 500px) {
     display: flex;
     flex-direction: column;
@@ -205,10 +204,22 @@ export const Avatar = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  cursor: pointer;
+  transition: filter 0.6s ease-in-out;
+  :hover {
+    filter: brightness(0.9);
+    transition: filter 0.6s ease-in-out;
+  }
 `;
 
 export const ProfileData = styled.div`
   display: none;
+  cursor: pointer;
+  transition: filter 0.6s ease-in-out;
+  :hover {
+    filter: brightness(0.9);
+    transition: filter 0.6s ease-in-out;
+  }
 
   @media (min-width: 1280px) {
     display: flex;

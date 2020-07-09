@@ -75,9 +75,9 @@ const MenuBar: React.FC = () => {
       </Topside>
 
       <Botside>
-        <Avatar />
+        <Avatar onClick={() => window.open('https://twitter.com/leoronne', 'blank')}/>
 
-        <ProfileData>
+        <ProfileData onClick={() => window.open('https://twitter.com/leoronne', 'blank')}>
           <strong>𝕽𝖔𝖓𝖓𝖊</strong>
           <span>@leoronne</span>
         </ProfileData>
