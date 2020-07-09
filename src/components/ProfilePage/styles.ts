@@ -6,7 +6,6 @@ import Button from '../Button';
 
 import avatar from '~/assets/img/avatar.jpg';
 
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -54,6 +53,13 @@ export const Avatar = styled.div`
   bottom: max(-60px, -10vw);
   left: 15px;
 
+  z-index: 1;
+  cursor: pointer;
+  transition: filter 0.6s ease-in-out;
+  :hover {
+    filter: brightness(0.9);
+    transition: filter 0.6s ease-in-out;
+  }
 `;
 
 export const ProfileData = styled.div`
