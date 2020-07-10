@@ -1,6 +1,7 @@
 import React from 'react';
 
 import twitter from '~/assets/img/twitter.jpg';
+import twitterpic from '~/assets/img/twitterpic.jpg';
 import instagram from '~/assets/img/instagram.jpg';
 import instagrampic from '~/assets/img/instagrampic.jpeg';
 import rocketseat from '~/assets/img/rocketseat.jpg';
@@ -40,7 +41,7 @@ const Tweet: React.FC<Props> = ({ showPicture = false }) => {
       user: '@Twitter',
       avatar: twitter,
       message: 'This is awesome!',
-      picture: instagrampic,
+      picture: twitterpic,
     },
     {
       name: 'Instagram',

@@ -21,7 +21,7 @@ const Feed: React.FC = () => {
         <Tweet showPicture />
         <Tweet />
         <Tweet showPicture />
-        <Tweet />
+        <Tweet showPicture />
       </Tweets>
     </Container>
   );
