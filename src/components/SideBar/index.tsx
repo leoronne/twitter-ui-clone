@@ -14,7 +14,7 @@ import { Container, SearchWrapper, SearchInput, SearchIcon, Body } from './style
 const SideBar: React.FC = () => {
   return (
     <Container>
-      <SearchWrapper>
+      <SearchWrapper data-tip="Search something on Twitter">
         <SearchInput placeholder="Search Twitter" />
         <SearchIcon />
       </SearchWrapper>

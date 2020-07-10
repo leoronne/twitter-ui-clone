@@ -191,6 +191,11 @@ export const Botside = styled.div`
 
   display: flex;
   align-items: center;
+  border-radius: 8px;
+  justify-content: center;
+  &:hover {
+    background: var(--twitter-dark-hover);
+  }
 `;
 
 export const Avatar = styled.div`

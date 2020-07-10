@@ -1,5 +1,11 @@
 import React from 'react';
 
+import twitter from '~/assets/img/twitter.jpg';
+import instagram from '~/assets/img/instagram.jpg';
+import instagrampic from '~/assets/img/instagrampic.jpeg';
+import rocketseat from '~/assets/img/rocketseat.jpg';
+import rocketseatpic from '~/assets/img/rocketseatpic.jpg';
+
 import {
   Container,
   Retweeted,
@@ -16,40 +22,44 @@ import {
   CommentIcon,
   RetweetIcon,
   LikeIcon,
+  ShareIcon,
 } from './styles';
 
-const Tweet: React.FC = () => {
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const days = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10',
-    '11',
-    '12',
-    '13',
-    '14',
-    '15',
-    '16',
-    '17',
-    '18',
-    '19',
-    '20',
-    '21',
-    '22',
-    '23',
-    '24',
-    '25',
-    '26',
-    '27',
-    '28',
+interface Props {
+  showPicture?: boolean;
+}
+
+export interface AvatarProps {
+  avatar: string;
+}
+
+const Tweet: React.FC<Props> = ({ showPicture = false }) => {
+  const tweets = [
+    {
+      name: 'Twitter',
+      user: '@Twitter',
+      avatar: twitter,
+      message: 'This is awesome!',
+      picture: instagrampic,
+    },
+    {
+      name: 'Instagram',
+      user: '@instagram',
+      avatar: instagram,
+      message: `Bold 🌈, Bright ✨, Beautiful 💋!`,
+      picture: instagrampic,
+    },
+    {
+      name: 'Rocketseat',
+      user: '@rocketseat',
+      avatar: rocketseat,
+      message: `Todo mundo tem algo para somar e contribuir. Você também. 🚀💜`,
+      picture: rocketseatpic,
+    },
   ];
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  const currentTweet = tweets[Math.floor(Math.random() * tweets.length)];
   return (
     <Container>
       <Retweeted>
@@ -58,33 +68,40 @@ const Tweet: React.FC = () => {
       </Retweeted>
 
       <Body>
-        <Avatar />
+        <Avatar
+          avatar={currentTweet.avatar}
+          onClick={() => window.open(`https://twitter.com/${currentTweet.user}`, 'blank')}
+          data-tip={`Go to ${currentTweet.user} profile`}
+        />
 
         <Content>
           <Header>
-            <strong>Rocketseat</strong>
-            <span>@rocketseat</span>
+            <strong>{currentTweet.name}</strong>
+            <span onClick={() => window.open(`https://twitter.com/${currentTweet.user}`, 'blank')} data-tip={`Go to ${currentTweet.user} profile`}>
+              {currentTweet.user}
+            </span>
             <Dot />
-            <time>{`${months[Math.floor(Math.random() * months.length)]} ${days[Math.floor(Math.random() * days.length)]}`} </time>
+            <time>{`${months[Math.floor(Math.random() * months.length)]} ${Math.floor(Math.random() * 28)}`} </time>
           </Header>
 
-          {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
-          <Description>Foguete não tem ré 🚀</Description>
-
-          <ImageContent />
+          <Description>{currentTweet.message}</Description>
+          {showPicture ? <ImageContent avatar={currentTweet.picture}/> : null}
 
           <Icons>
-            <Status>
+            <Status data-tip="Show replies">
               <CommentIcon />
-              18
+              {Math.floor(Math.random() * 5000)}
             </Status>
-            <Status>
+            <Status data-tip="Retweet">
               <RetweetIcon />
-              18
+              {Math.floor(Math.random() * 5000)}
             </Status>
-            <Status>
+            <Status data-tip="Like Tweet">
               <LikeIcon />
-              999
+              {Math.floor(Math.random() * 5000)}
+            </Status>
+            <Status data-tip="Share Tweet">
+              <ShareIcon />
             </Status>
           </Icons>
         </Content>

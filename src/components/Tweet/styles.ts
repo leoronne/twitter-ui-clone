@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import { Chat, Favorite, Retweet } from '../../styles/Icons';
+import { Comment, Favorite, Retweet, Share } from '../../styles/Icons';
+import { AvatarProps } from '.';
 
 export const Container = styled.div`
   display: flex;
@@ -11,6 +12,9 @@ export const Container = styled.div`
   border-bottom: 1px solid var(--outline);
 
   max-width: 100%;
+  :hover {
+    background-color: rgb(21, 24, 28);
+  }
 `;
 
 export const Retweeted = styled.div`
@@ -19,6 +23,7 @@ export const Retweeted = styled.div`
 
   font-size: 13px;
   color: var(--gray);
+  margin-bottom: 5px;
 `;
 export const RTHeaderIcon = styled(Retweet)`
   width: 16px;
@@ -26,6 +31,7 @@ export const RTHeaderIcon = styled(Retweet)`
 
   margin-left: 35px;
   margin-right: 9px;
+  fill: var(--gray);
 
   > path {
     fill: var(--gray);
@@ -39,17 +45,23 @@ export const Body = styled.div`
   position: relative;
 `;
 
-export const Avatar = styled.div`
+export const Avatar = styled.div<AvatarProps>`
   width: 49px;
   height: 49px;
   border-radius: 50%;
   flex-shrink: 0;
   background: var(--gray);
+  background: ${(props) => (props.avatar ? `url(${props.avatar})` : 'var(--gray)')};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
 
   position: absolute;
   top: 0;
   left: 0;
 `;
+
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -58,12 +70,21 @@ export const Content = styled.div`
   margin-top: 2px;
   padding-left: 59px;
 `;
+
 export const Header = styled.div`
   display: flex;
   align-items: center;
 
   font-size: 15px;
   white-space: nowrap;
+
+  span {
+    cursor: pointer;
+  }
+
+  span:hover {
+    text-decoration: underline;
+  }
 
   > strong {
     margin-right: 5px;
@@ -94,12 +115,14 @@ export const Description = styled.p`
   margin-top: 4px;
 `;
 
-export const ImageContent = styled.div`
+export const ImageContent = styled.div<AvatarProps>`
   margin-top: 12px;
   width: 100%;
   height: min(285px, max(175px, 41vw));
-
-  background: var(--outline);
+  background: ${(props) => (props.avatar ? `url(${props.avatar})` : 'var(--outline)')};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 14px;
 
   cursor: pointer;
@@ -117,7 +140,7 @@ export const Icons = styled.div`
   width: 100%; /** Mobile */
 
   @media (min-width: 330px) {
-    width: 63%;
+    width: 90%;
   }
 
   > div {
@@ -132,8 +155,17 @@ export const Icons = styled.div`
 export const Status = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
 
   font-size: 14px;
+  padding: 5px;
+  border-radius: 15px;
+  transition: var(--transition-slow);
+
+  :hover {
+    background-color: var(--twitter-dark-hover);
+    transition: var(--transition-slow);
+  }
 
   > svg {
     margin-right: 5px;
@@ -143,6 +175,13 @@ export const Status = styled.div`
     &,
     > svg path {
       color: var(--gray);
+    }
+  }
+  &:nth-child(1):hover {
+    color: var(--twitter);
+    &,
+    > svg path {
+      fill: var(--twitter);
     }
   }
   &:nth-child(2) {
@@ -159,6 +198,23 @@ export const Status = styled.div`
       fill: var(--like);
     }
   }
+  &:nth-child(4) {
+    > svg {
+      margin: 0 !important;
+    }
+    &,
+    > svg path {
+      color: var(--gray);
+      fill: var(--gray);
+    }
+  }
+  &:nth-child(4):hover {
+    color: var(--twitter);
+    &,
+    > svg path {
+      fill: var(--twitter);
+    }
+  }
 `;
 
 const iconCSS = css`
@@ -166,13 +222,17 @@ const iconCSS = css`
   height: 19px;
 `;
 
-export const CommentIcon = styled(Chat)`
+export const CommentIcon = styled(Comment)`
   ${iconCSS}
 `;
 
 export const LikeIcon = styled(Favorite)`
   ${iconCSS}
 `;
+
 export const RetweetIcon = styled(Retweet)`
+  ${iconCSS}
+`;
+export const ShareIcon = styled(Share)`
   ${iconCSS}
 `;

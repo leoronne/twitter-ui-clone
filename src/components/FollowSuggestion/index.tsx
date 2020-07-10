@@ -7,6 +7,7 @@ interface Props {
   nickname: string;
   avatar: string;
 }
+
 export interface AvatarProps {
   avatar: string;
 }
@@ -23,7 +24,9 @@ const FollowSuggestion: React.FC<Props> = ({ name, nickname, avatar }) => {
         </Info>
       </div>
 
-      <FollowButton outlined>Follow</FollowButton>
+      <FollowButton outlined data-tip={`Follow ${nickname}`}>
+        Follow
+      </FollowButton>
     </Container>
   );
 };

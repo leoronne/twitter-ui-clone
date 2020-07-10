@@ -27,3 +27,4 @@ firebase.json
 .firebaserc
 
 .vscode
+*.psd

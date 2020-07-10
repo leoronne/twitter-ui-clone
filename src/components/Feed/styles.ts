@@ -4,6 +4,13 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
+export const Tabs = styled.div`
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+`;
 
 export const Tab = styled.div`
   margin-top: 10px;
@@ -15,9 +22,13 @@ export const Tab = styled.div`
 
   outline: 0;
   cursor: pointer;
+  color: var(--gray);
+  border-bottom: 2px solid transparent;
 
-  color: var(--twitter);
-  border-bottom: 2px solid var(--twitter);
+  &.active {
+    color: var(--twitter);
+    border-bottom: 2px solid var(--twitter);
+  }
 
   &:hover {
     background: var(--twitter-dark-hover);
@@ -27,6 +38,8 @@ export const Tab = styled.div`
 export const Tweets = styled.div`
   display: flex;
   flex-direction: column;
+  border-top: 1px solid var(--gray);
+
 
   flex-shrink: 0;
 `;

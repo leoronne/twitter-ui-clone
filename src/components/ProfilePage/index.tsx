@@ -8,7 +8,7 @@ const ProfilePage: React.FC = () => {
   return (
     <Container>
       <Banner>
-        <Avatar onClick={() => window.open('https://twitter.com/leoronne', 'blank')}/>
+        <Avatar onClick={() => window.open('https://twitter.com/leoronne', 'blank')} data-tip="Go to @leoronne profile on Twitter" />
       </Banner>
 
       <ProfileData>

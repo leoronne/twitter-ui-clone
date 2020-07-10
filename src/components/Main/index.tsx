@@ -2,23 +2,13 @@ import React from 'react';
 
 import ProfilePage from '../ProfilePage';
 
-import {
-  Container,
-  Header,
-  BackIcon,
-  ProfileInfo,
-  BottomMenu,
-  HomeIcon,
-  SearchIcon,
-  BellIcon,
-  EmailIcon,
-} from './styles';
+import { Container, Header, BackIcon, ProfileInfo, BottomMenu, HomeIcon, SearchIcon, BellIcon, EmailIcon } from './styles';
 
 const Main: React.FC = () => {
   return (
     <Container>
       <Header>
-        <button>
+        <button data-tip="Return">
           <BackIcon />
         </button>
 

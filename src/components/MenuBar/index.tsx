@@ -19,7 +19,7 @@ import {
   HashIcon,
   DotsIcon,
   TweetIcon,
-  TwitterIcon
+  TwitterIcon,
 } from './styles';
 
 const MenuBar: React.FC = () => {
@@ -28,32 +28,32 @@ const MenuBar: React.FC = () => {
       <Topside>
         <TwitterIcon />
 
-        <MenuButton>
+        <MenuButton data-tip="Go to homepage">
           <HomeIcon />
           <span>Home</span>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton data-tip="Explore Twitter">
           <HashIcon />
           <span>Explore</span>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton data-tip="User notifications">
           <BellIcon />
           <span>Notifications</span>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton data-tip="User messages">
           <EmailIcon />
           <span>Messages</span>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton data-tip="Bookmarked items">
           <BookMarkIcon />
           <span>Bookmarks</span>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton data-tip="User lists">
           <ListIcon />
           <span>Lists</span>
         </MenuButton>
@@ -63,21 +63,21 @@ const MenuBar: React.FC = () => {
           <span>Profile</span>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton data-tip="More options">
           <DotsIcon />
           <span>More</span>
         </MenuButton>
 
-        <Button>
+        <Button data-tip="Create new Tweet">
           <TweetIcon />
           <span>Tweet</span>
         </Button>
       </Topside>
 
       <Botside>
-        <Avatar onClick={() => window.open('https://twitter.com/leoronne', 'blank')}/>
+        <Avatar onClick={() => window.open('https://twitter.com/leoronne', 'blank')} data-tip="Go to @leoronne profile on Twitter"/>
 
-        <ProfileData onClick={() => window.open('https://twitter.com/leoronne', 'blank')}>
+        <ProfileData onClick={() => window.open('https://twitter.com/leoronne', 'blank')} data-tip="Go to @leoronne profile on Twitter">
           <strong>𝕽𝖔𝖓𝖓𝖊</strong>
           <span>@leoronne</span>
         </ProfileData>
