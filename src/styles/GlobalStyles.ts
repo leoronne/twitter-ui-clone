@@ -24,6 +24,7 @@ export default createGlobalStyle`
     background: none;
     font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, Arial, sans-serif;
   }
+  
   html {
     background: var(--primary);
   }
