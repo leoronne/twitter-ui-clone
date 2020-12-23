@@ -1,9 +1,6 @@
 import React from 'react';
-import ReactTooltip from 'react-tooltip';
 
-import MenuBar from '../components/MenuBar';
-import Main from '../components/Main';
-import SideBar from '../components/SideBar';
+import { MenuBar, Main, Sidebar } from '../components';
 
 import { Container, Wrapper } from './styles';
 
@@ -13,9 +10,8 @@ const Layout: React.FC = () => {
       <Wrapper>
         <MenuBar />
         <Main />
-        <SideBar />
+        <Sidebar />
       </Wrapper>
-      <ReactTooltip type="dark" effect="solid" />
     </Container>
   );
 };

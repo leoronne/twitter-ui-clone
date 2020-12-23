@@ -1,19 +1,28 @@
 import React from 'react';
+import { Tooltip } from '@material-ui/core';
 
 import Tweet from '../Tweet';
 
+import { useStyles } from '../../styles/MaterialUI';
 import { Container, Tabs, Tab, Tweets } from './styles';
 
 const Feed: React.FC = () => {
+  const classes = useStyles();
   return (
     <Container>
       <Tabs>
-        <Tab className="active" data-tip="User tweets">
-          Tweets
-        </Tab>
-        <Tab data-tip="User tweets and replies">Tweets & replies</Tab>
-        <Tab data-tip="User media">Media</Tab>
-        <Tab data-tip="User likes">Likes</Tab>
+        <Tooltip title="User tweets" placement="bottom" arrow classes={{ tooltip: classes.tooltip }}>
+          <Tab className="active">Tweets</Tab>
+        </Tooltip>
+        <Tooltip title="User tweets and replies" placement="bottom" arrow classes={{ tooltip: classes.tooltip }}>
+          <Tab>Tweets & replies</Tab>
+        </Tooltip>
+        <Tooltip title="User media" placement="bottom" arrow classes={{ tooltip: classes.tooltip }}>
+          <Tab>Media</Tab>
+        </Tooltip>
+        <Tooltip title="User likes" placement="bottom" arrow classes={{ tooltip: classes.tooltip }}>
+          <Tab>Likes</Tab>
+        </Tooltip>
       </Tabs>
 
       <Tweets>

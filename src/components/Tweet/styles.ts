@@ -88,6 +88,10 @@ export const Header = styled.div`
 
   > strong {
     margin-right: 5px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   > span,

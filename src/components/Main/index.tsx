@@ -8,7 +8,7 @@ const Main: React.FC = () => {
   return (
     <Container>
       <Header>
-        <button data-tip="Return">
+        <button type="button">
           <BackIcon />
         </button>
 

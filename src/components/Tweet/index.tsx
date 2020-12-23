@@ -1,4 +1,7 @@
 import React from 'react';
+import { Tooltip } from '@material-ui/core';
+
+import kFormatter from '../../utils/kFormatter';
 
 import twitter from '~/assets/img/twitter.jpg';
 import twitterpic from '~/assets/img/twitterpic.jpg';
@@ -7,6 +10,7 @@ import instagrampic from '~/assets/img/instagrampic.jpeg';
 import rocketseat from '~/assets/img/rocketseat.jpg';
 import rocketseatpic from '~/assets/img/rocketseatpic.jpg';
 
+import { useStyles } from '../../styles/MaterialUI';
 import {
   Container,
   Retweeted,
@@ -35,6 +39,7 @@ export interface AvatarProps {
 }
 
 const Tweet: React.FC<Props> = ({ showPicture = false }) => {
+  const classes = useStyles();
   const tweets = [
     {
       name: 'Twitter',
@@ -69,41 +74,50 @@ const Tweet: React.FC<Props> = ({ showPicture = false }) => {
       </Retweeted>
 
       <Body>
-        <Avatar
-          avatar={currentTweet.avatar}
-          onClick={() => window.open(`https://twitter.com/${currentTweet.user}`, 'blank')}
-          data-tip={`Go to ${currentTweet.user} profile`}
-        />
+        <Tooltip title={`Go to ${currentTweet.user} profile`} placement="bottom" arrow classes={{ tooltip: classes.tooltip }}>
+          <Avatar avatar={currentTweet.avatar} onClick={() => window.open(`https://twitter.com/${currentTweet.user}`, 'blank')} />
+        </Tooltip>
 
         <Content>
           <Header>
             <strong>{currentTweet.name}</strong>
-            <span onClick={() => window.open(`https://twitter.com/${currentTweet.user}`, 'blank')} data-tip={`Go to ${currentTweet.user} profile`}>
-              {currentTweet.user}
-            </span>
+            <Tooltip title={`Go to ${currentTweet.user} profile`} placement="bottom" arrow classes={{ tooltip: classes.tooltip }}>
+              <span onClick={() => window.open(`https://twitter.com/${currentTweet.user}`, 'blank')}>{currentTweet.user}</span>
+            </Tooltip>
             <Dot />
-            <time>{`${months[Math.floor(Math.random() * months.length)]} ${Math.floor(Math.random() * 28)}`} </time>
+            <time>{`${months[Math.floor(Math.random() * months.length)]} ${Math.floor(Math.random() * 28)}`}</time>
           </Header>
 
           <Description>{currentTweet.message}</Description>
-          {showPicture ? <ImageContent avatar={currentTweet.picture}/> : null}
+          {showPicture ? <ImageContent avatar={currentTweet.picture} /> : null}
 
           <Icons>
-            <Status data-tip="Show replies">
-              <CommentIcon />
-              {Math.floor(Math.random() * 5000)}
-            </Status>
-            <Status data-tip="Retweet">
-              <RetweetIcon />
-              {Math.floor(Math.random() * 5000)}
-            </Status>
-            <Status data-tip="Like Tweet">
-              <LikeIcon />
-              {Math.floor(Math.random() * 5000)}
-            </Status>
-            <Status data-tip="Share Tweet">
-              <ShareIcon />
-            </Status>
+            <Tooltip title="Show replies" placement="bottom" arrow classes={{ tooltip: classes.tooltip }}>
+              <Status>
+                <CommentIcon />
+                {kFormatter(Math.floor(Math.random() * 5000))}
+              </Status>
+            </Tooltip>
+
+            <Tooltip title="Retweet" placement="bottom" arrow classes={{ tooltip: classes.tooltip }}>
+              <Status>
+                <RetweetIcon />
+                {kFormatter(Math.floor(Math.random() * 5000))}
+              </Status>
+            </Tooltip>
+
+            <Tooltip title="Like Tweet" placement="bottom" arrow classes={{ tooltip: classes.tooltip }}>
+              <Status>
+                <LikeIcon />
+                {kFormatter(Math.floor(Math.random() * 5000))}
+              </Status>
+            </Tooltip>
+
+            <Tooltip title="Share Tweet" placement="bottom" arrow classes={{ tooltip: classes.tooltip }}>
+              <Status>
+                <ShareIcon />
+              </Status>
+            </Tooltip>
           </Icons>
         </Content>
       </Body>

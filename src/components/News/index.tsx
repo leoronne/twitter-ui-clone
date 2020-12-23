@@ -4,22 +4,24 @@ import { Container } from './styles';
 
 const News: React.FC = () => {
   const trends = [
-    '#MasterChef',
-    '#PrideGaming',
+    'MasterChef',
+    'PrideGaming',
     'Gado do Bolsonaro',
-    '#DragRace',
+    'DragRace',
     'Doom Patrol',
     'Resenha',
     'Rocketseat',
-    '#NLW',
-    'Ranoroxa na Nimo',
-    '#Pokémon',
+    'NLW',
+    'Do While',
+    'Pokémon',
     'Quarentena',
     'UI Clone',
     'Eita',
     'Reactjs',
     'Styled Components',
     'TypeScript',
+    'Westworld',
+    'The Mandalorian',
   ];
   return (
     <Container>

@@ -8,7 +8,7 @@ const ProfilePage: React.FC = () => {
   return (
     <Container>
       <Banner>
-        <Avatar onClick={() => window.open('https://twitter.com/leoronne', 'blank')} data-tip="Go to @leoronne profile on Twitter" />
+        <Avatar onClick={() => window.open('https://twitter.com/leoronne', 'blank')} />
       </Banner>
 
       <ProfileData>
@@ -18,9 +18,10 @@ const ProfilePage: React.FC = () => {
         <h2>@leoronne</h2>
 
         <p>
-          Product Manager at{' '}
-          <a href="https://br.visor.io" target="_blank" rel="noopener noreferrer">
-            @Visor
+          Front-end Developer at
+          {' '}
+          <a href="https://memed.com.br/" target="_blank" rel="noopener noreferrer">
+            @Memed
           </a>
         </p>
 
@@ -47,10 +48,14 @@ const ProfilePage: React.FC = () => {
 
         <Followage>
           <span>
-            <strong>1993</strong> Following
+            <strong>1993</strong>
+            {' '}
+            Following
           </span>
           <span>
-            <strong>261</strong> Followers
+            <strong>261</strong>
+            {' '}
+            Followers
           </span>
         </Followage>
       </ProfileData>

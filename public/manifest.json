@@ -1,6 +1,13 @@
 {
-  "short_name": "Twitter-UI-Clone",
-  "name": "This app is a clone from Twitter application frontend",
+  "short_name": "twitter-ui-clone",
+  "name": "Twitter UI Clone",
+  "author": "Leonardo Ronne",
+  "description": "This application contains an UI Clone (partial) from Twitter website.",
+  "developer": {
+    "name": "Leonardo Ronne",
+    "url": "https://github.com/leoronne"
+  },
+  "homepage_url": "https://twitter.ui-clone.ronne.dev",
   "icons": [
     {
       "src": "favicon.ico",
@@ -13,13 +20,23 @@
       "sizes": "192x192"
     },
     {
+      "src": "logo256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "logo1024.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
     }
   ],
   "start_url": "/home/",
   "display": "standalone",
   "theme_color": "#1da1f2",
-  "background_color": "#fff"
+  "background_color": "#1da1f2"
 }

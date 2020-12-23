@@ -24,9 +24,7 @@ const FollowSuggestion: React.FC<Props> = ({ name, nickname, avatar }) => {
         </Info>
       </div>
 
-      <FollowButton outlined data-tip={`Follow ${nickname}`}>
-        Follow
-      </FollowButton>
+      <FollowButton outlined>Follow</FollowButton>
     </Container>
   );
 };

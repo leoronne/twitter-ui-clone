@@ -27,33 +27,32 @@ const MenuBar: React.FC = () => {
     <Container>
       <Topside>
         <TwitterIcon />
-
-        <MenuButton data-tip="Go to homepage">
+        <MenuButton>
           <HomeIcon />
           <span>Home</span>
         </MenuButton>
 
-        <MenuButton data-tip="Explore Twitter">
+        <MenuButton>
           <HashIcon />
           <span>Explore</span>
         </MenuButton>
 
-        <MenuButton data-tip="User notifications">
+        <MenuButton>
           <BellIcon />
           <span>Notifications</span>
         </MenuButton>
 
-        <MenuButton data-tip="User messages">
+        <MenuButton>
           <EmailIcon />
           <span>Messages</span>
         </MenuButton>
 
-        <MenuButton data-tip="Bookmarked items">
+        <MenuButton>
           <BookMarkIcon />
           <span>Bookmarks</span>
         </MenuButton>
 
-        <MenuButton data-tip="User lists">
+        <MenuButton>
           <ListIcon />
           <span>Lists</span>
         </MenuButton>
@@ -63,21 +62,21 @@ const MenuBar: React.FC = () => {
           <span>Profile</span>
         </MenuButton>
 
-        <MenuButton data-tip="More options">
+        <MenuButton>
           <DotsIcon />
           <span>More</span>
         </MenuButton>
 
-        <Button data-tip="Create new Tweet">
+        <Button>
           <TweetIcon />
           <span>Tweet</span>
         </Button>
       </Topside>
 
       <Botside>
-        <Avatar onClick={() => window.open('https://twitter.com/leoronne', 'blank')} data-tip="Go to @leoronne profile on Twitter"/>
+        <Avatar onClick={() => window.open('https://twitter.com/leoronne', 'blank')} />
 
-        <ProfileData onClick={() => window.open('https://twitter.com/leoronne', 'blank')} data-tip="Go to @leoronne profile on Twitter">
+        <ProfileData onClick={() => window.open('https://twitter.com/leoronne', 'blank')}>
           <strong>𝕽𝖔𝖓𝖓𝖊</strong>
           <span>@leoronne</span>
         </ProfileData>

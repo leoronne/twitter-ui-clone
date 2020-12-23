@@ -11,10 +11,10 @@ import user3 from '~/assets/img/user2.jpg';
 
 import { Container, SearchWrapper, SearchInput, SearchIcon, Body } from './styles';
 
-const SideBar: React.FC = () => {
+const Sidebar: React.FC = () => {
   return (
     <Container>
-      <SearchWrapper data-tip="Search something on Twitter">
+      <SearchWrapper>
         <SearchInput placeholder="Search Twitter" />
         <SearchIcon />
       </SearchWrapper>
@@ -36,4 +36,4 @@ const SideBar: React.FC = () => {
   );
 };
 
-export default SideBar;
+export default Sidebar;

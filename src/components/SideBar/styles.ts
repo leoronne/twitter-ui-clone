@@ -32,7 +32,9 @@ export const SearchInput = styled.input`
   padding: 0 10px 0 52px;
   border-radius: 19.5px;
   background: var(--search);
-    border: 1px solid transparent;
+  border: 1px solid transparent;
+  transition: var(--transition-slow);
+  outline: 0;
 
   &::placeholder {
     color: var(--gray);
@@ -40,20 +42,20 @@ export const SearchInput = styled.input`
 
   ~ svg {
     position: relative;
-    top: -33px;
+    top: -35px;
     left: 15px;
     z-index: 1;
 
-    transition: 180ms ease-in-out;
+    transition: var(--transition-slow);
   }
-
-  outline: 0;
 
   &:focus {
     border: 1px solid var(--twitter);
+    transition: var(--transition-slow);
 
     ~ svg {
       fill: var(--twitter);
+      transition: var(--transition-slow);
     }
   }
 `;
