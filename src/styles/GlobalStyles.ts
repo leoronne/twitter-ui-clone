@@ -22,7 +22,7 @@ export default createGlobalStyle`
     border: 0;
     outline: 0;
     background: none;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, Arial, sans-serif;
+    font-family: var(--font-family);
   }
   
   html {
@@ -44,6 +44,8 @@ export default createGlobalStyle`
     --transition-slow: 0.6s ease-in-out !important;
     --filter-transition: filter var(--transition-slow);
     --hover-effect: brightness(1.3);
+
+    --font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, Arial, sans-serif;
   }
 
   a {
