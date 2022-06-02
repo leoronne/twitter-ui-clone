@@ -34,9 +34,7 @@
 
 ## Project :star2:
 
-This repo contains an UI clone (partial) from Twitter website.
-
-<br>
+This project was part of an UI Clone challenge, the idea was to replicate (partially) the Twitter's profile page using ReactJS, MUI and styled-components.
 
 Deployed [here](https://twitter.ui-clone.ronne.dev).
 
